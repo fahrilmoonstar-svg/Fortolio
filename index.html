@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahril Project | Cybersecurity Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #00ff9d;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 2px solid #00ff9d;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ff9d;
+        }
+
+        .typing-text {
+            font-size: 1.2em;
+            margin: 15px 0;
+            min-height: 60px;
+        }
+
+        .badge-container {
+            margin: 20px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid #00ff9d;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            font-size: 0.9em;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 50px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 150px;
+            border: 1px solid #00ff9d;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00ff9d;
+        }
+
+        /* Tools Section */
+        .section-title {
+            font-size: 2em;
+            text-align: center;
+            margin: 50px 0 30px;
+            border-left: 4px solid #00ff9d;
+            padding-left: 20px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .tool-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 4px solid #00ff9d;
+            transition: all 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+        }
+
+        .tool-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .tool-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tool-desc {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .tool-code {
+            background: #0a0e27;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.7em;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        /* Demo Button */
+        .demo-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+
+        .btn {
+            background: #00ff9d;
+            color: #0a0e27;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+            font-family: monospace;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 157, 0.5);
+            background: #00cc7a;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00ff9d;
+            color: #00ff9d;
+        }
+
+        .btn-outline:hover {
+            background: #00ff9d;
+            color: #0a0e27;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .social-link {
+            color: #00ff9d;
+            text-decoration: none;
+            border: 1px solid #00ff9d;
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            background: #00ff9d;
+            color: #0a0e27;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #00ff9d;
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .stats { flex-direction: column; }
+            .tools-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>⚡ Fahril Project</h1>
+            <div class="typing-text" id="typingText"></div>
+            <div class="badge-container">
+                <span class="badge">🔍 SQL Injection Expert</span>
+                <span class="badge">🛡️ XSS Hunter</span>
+                <span class="badge">🐍 Python Developer</span>
+                <span class="badge">📱 Termux Enthusiast</span>
+                <span class="badge">🔐 Security Researcher</span>
+            </div>
+        </header>
+
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">3+</div>
+                <div>Security Tools</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">OWASP</div>
+                <div>Top 10 Coverage</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div>Mobile Ready</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Open</div>
+                <div>Source</div>
+            </div>
+        </div>
+
+        <!-- Tools Section -->
+        <div class="section-title">📁 My Security Tools</div>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">🔍</div>
+                <div class="tool-title">SQL Injection Detector</div>
+                <div class="tool-desc">Mendeteksi celah SQL Injection pada parameter URL secara otomatis.</div>
+                <div class="tool-code">$ python sqli_detector.py target.com?id=1</div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🛡️</div>
+                <div class="tool-title">XSS Hunter</div>
+                <div class="tool-desc">Scanner untuk menemukan celah Cross-Site Scripting (Reflected & Stored).</div>
+                <div class="tool-code">$ python xss_detector.py target.com --parameter search</div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🔐</div>
+                <div class="tool-title">IDOR Tester</div>
+                <div class="tool-desc">Menguji kerentanan Broken Access Control / IDOR.</div>
+                <div class="tool-code">$ python idor_tester.py --url target.com/profile</div>
+            </div>
+        </div>
+
+        <!-- Demo & CTA -->
+        <div class="demo-section">
+            <h3 style="margin-bottom: 20px;">🚀 Lihat Langsung Project Saya</h3>
+            <button class="btn" id="btnGithub">📂 Kunjungi GitHub Repository</button>
+            <button class="btn btn-outline" id="btnPortfolio">🌐 Live Demo Portfolio</button>
+        </div>
+
+        <!-- Installation -->
+        <div class="section-title">📱 Install di Termux (Android)</div>
+        <div class="tool-card" style="margin-bottom: 30px;">
+            <div class="tool-code" style="margin: 0;">
+                $ pkg update && pkg upgrade<br>
+                $ pkg install python git<br>
+                $ pip install requests beautifulsoup4<br>
+                $ git clone https://github.com/fahrilmoonstar-svg/Security-tools.git<br>
+                $ cd Security-tools<br>
+                $ python sqli_detector.py --help
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://github.com/fahrilmoonstar-svg" target="_blank" class="social-link">🐙 GitHub</a>
+            <a href="#" class="social-link">💼 Portfolio</a>
+            <a href="#" class="social-link">📄 Documentation</a>
+            <a href="#" class="social-link">🐦 Twitter</a>
+        </div>
+
+        <footer>
+            <p>© 2026 Fahril | Cybersecurity Researcher & Developer</p>
+            <p style="margin-top: 10px;">⚠️ Tools ini untuk pembelajaran etis. Hanya gunakan di lingkungan yang diizinkan.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Typing effect
+        const texts = ["Cybersecurity Researcher", "Python Developer", "Bug Hunter", "Termux Expert"];
+        let index = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById("typingText");
+
+        function typeEffect() {
+            const currentText = texts[index];
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                index = (index + 1) % texts.length;
+                setTimeout(typeEffect, 500);
+            } else {
+                setTimeout(typeEffect, isDeleting ? 50 : 100);
+            }
+        }
+        typeEffect();
+
+        // Button events
+        const btnGithub = document.getElementById("btnGithub");
+        const btnPortfolio = document.getElementById("btnPortfolio");
+
+        btnGithub.onclick = () => {
+            window.open("https://github.com/fahrilmoonstar-svg/Security-tools", "_blank");
+        };
+
+        btnPortfolio.onclick = () => {
+            window.location.href = "https://fahrilmoonstar-svg.github.io/Security-tools/";
+        };
+    </script>
+</body>
+</html>
